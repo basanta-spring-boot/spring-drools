@@ -1,0 +1,18 @@
+package kieRule;
+import com.javatechie.spring.drool.api.pojo.CreditCard;
+
+rule "HDFC card"
+
+when 
+cardObject : CreditCard(cardType=="HDFC");
+then
+cardObject.setDiscount(10);
+end
+
+rule "ICICI card"
+
+when 
+cardObject : CreditCard(cardType=="ICICI");
+then
+cardObject.setDiscount(8);
+end
